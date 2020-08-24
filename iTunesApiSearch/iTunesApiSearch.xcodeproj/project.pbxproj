@@ -13,8 +13,8 @@
 		91A4992424F3F07E00F7A03B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A4992224F3F07E00F7A03B /* Main.storyboard */; };
 		91A4992624F3F08000F7A03B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91A4992524F3F08000F7A03B /* Assets.xcassets */; };
 		91A4992924F3F08000F7A03B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A4992724F3F08000F7A03B /* LaunchScreen.storyboard */; };
-		91A4993424F3F08000F7A03B /* iTunesApiSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A4993324F3F08000F7A03B /* iTunesApiSearchTests.swift */; };
-		91A4993F24F3F08000F7A03B /* iTunesApiSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A4993E24F3F08000F7A03B /* iTunesApiSearchUITests.swift */; };
+		91A4993424F3F08000F7A03B /* ITunesApiSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A4993324F3F08000F7A03B /* ITunesApiSearchTests.swift */; };
+		91A4993F24F3F08000F7A03B /* ITunesApiSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A4993E24F3F08000F7A03B /* ITunesApiSearchUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,10 +44,10 @@
 		91A4992824F3F08000F7A03B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91A4992A24F3F08000F7A03B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91A4992F24F3F08000F7A03B /* iTunesApiSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesApiSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		91A4993324F3F08000F7A03B /* iTunesApiSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesApiSearchTests.swift; sourceTree = "<group>"; };
+		91A4993324F3F08000F7A03B /* ITunesApiSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesApiSearchTests.swift; sourceTree = "<group>"; };
 		91A4993524F3F08000F7A03B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91A4993A24F3F08000F7A03B /* iTunesApiSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesApiSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		91A4993E24F3F08000F7A03B /* iTunesApiSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesApiSearchUITests.swift; sourceTree = "<group>"; };
+		91A4993E24F3F08000F7A03B /* ITunesApiSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesApiSearchUITests.swift; sourceTree = "<group>"; };
 		91A4994024F3F08000F7A03B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,7 +113,7 @@
 		91A4993224F3F08000F7A03B /* iTunesApiSearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				91A4993324F3F08000F7A03B /* iTunesApiSearchTests.swift */,
+				91A4993324F3F08000F7A03B /* ITunesApiSearchTests.swift */,
 				91A4993524F3F08000F7A03B /* Info.plist */,
 			);
 			path = iTunesApiSearchTests;
@@ -122,7 +122,7 @@
 		91A4993D24F3F08000F7A03B /* iTunesApiSearchUITests */ = {
 			isa = PBXGroup;
 			children = (
-				91A4993E24F3F08000F7A03B /* iTunesApiSearchUITests.swift */,
+				91A4993E24F3F08000F7A03B /* ITunesApiSearchUITests.swift */,
 				91A4994024F3F08000F7A03B /* Info.plist */,
 			);
 			path = iTunesApiSearchUITests;
@@ -135,6 +135,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91A4994324F3F08000F7A03B /* Build configuration list for PBXNativeTarget "iTunesApiSearch" */;
 			buildPhases = (
+				91A4994E24F3F68A00F7A03B /* Swiftlint */,
 				91A4991524F3F07E00F7A03B /* Sources */,
 				91A4991624F3F07E00F7A03B /* Frameworks */,
 				91A4991724F3F07E00F7A03B /* Resources */,
@@ -254,6 +255,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		91A4994E24F3F68A00F7A03B /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		91A4991524F3F07E00F7A03B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -269,7 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91A4993424F3F08000F7A03B /* iTunesApiSearchTests.swift in Sources */,
+				91A4993424F3F08000F7A03B /* ITunesApiSearchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91A4993F24F3F08000F7A03B /* iTunesApiSearchUITests.swift in Sources */,
+				91A4993F24F3F08000F7A03B /* ITunesApiSearchUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
