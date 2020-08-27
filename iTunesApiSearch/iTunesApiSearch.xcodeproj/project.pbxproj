@@ -24,6 +24,7 @@
 		91B54FE324F82A16004A50CC /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B54FE224F82A16004A50CC /* JSONParameterEncoder.swift */; };
 		91B54FE524F82ACD004A50CC /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B54FE424F82ACD004A50CC /* NetworkRouter.swift */; };
 		91B54FE724F82BE8004A50CC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B54FE624F82BE8004A50CC /* Router.swift */; };
+		91B54FEA24F8663F004A50CC /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B54FE924F8663F004A50CC /* SearchModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		91B54FE224F82A16004A50CC /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 		91B54FE424F82ACD004A50CC /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		91B54FE624F82BE8004A50CC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		91B54FE924F8663F004A50CC /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		91A4991B24F3F07E00F7A03B /* iTunesApiSearch */ = {
 			isa = PBXGroup;
 			children = (
+				91B54FE824F86631004A50CC /* Model */,
 				91A4994F24F3FC1600F7A03B /* Networking */,
 				91A4991C24F3F07E00F7A03B /* AppDelegate.swift */,
 				91A4991E24F3F07E00F7A03B /* SceneDelegate.swift */,
@@ -185,6 +188,14 @@
 				91B54FDE24F81C1F004A50CC /* NetworkError.swift */,
 			);
 			path = ErrorHandling;
+			sourceTree = "<group>";
+		};
+		91B54FE824F86631004A50CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91B54FE924F8663F004A50CC /* SearchModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91B54FEA24F8663F004A50CC /* SearchModel.swift in Sources */,
 				91B54FE324F82A16004A50CC /* JSONParameterEncoder.swift in Sources */,
 				91B54FE524F82ACD004A50CC /* NetworkRouter.swift in Sources */,
 				91A4995924F45BC400F7A03B /* ParameterEncoding.swift in Sources */,
