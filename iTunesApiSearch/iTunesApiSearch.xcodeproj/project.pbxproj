@@ -25,6 +25,8 @@
 		91B54FE524F82ACD004A50CC /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B54FE424F82ACD004A50CC /* NetworkRouter.swift */; };
 		91B54FE724F82BE8004A50CC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B54FE624F82BE8004A50CC /* Router.swift */; };
 		91B54FEA24F8663F004A50CC /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B54FE924F8663F004A50CC /* SearchModel.swift */; };
+		91B54FED24F87130004A50CC /* iTunesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B54FEC24F87130004A50CC /* iTunesEndpoint.swift */; };
+		91B54FEF24F946F1004A50CC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B54FEE24F946F1004A50CC /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		91B54FE424F82ACD004A50CC /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		91B54FE624F82BE8004A50CC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		91B54FE924F8663F004A50CC /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		91B54FEC24F87130004A50CC /* iTunesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesEndpoint.swift; sourceTree = "<group>"; };
+		91B54FEE24F946F1004A50CC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 		91A4994F24F3FC1600F7A03B /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				91B54FEB24F870D8004A50CC /* iTunesEndpoint */,
 				91B54FDD24F81C05004A50CC /* ErrorHandling */,
 				91A4995724F45BA100F7A03B /* Encoding */,
 				91A4995224F4574F00F7A03B /* Service */,
@@ -168,6 +173,7 @@
 				91A4995524F4599700F7A03B /* HTTPTask.swift */,
 				91B54FE424F82ACD004A50CC /* NetworkRouter.swift */,
 				91B54FE624F82BE8004A50CC /* Router.swift */,
+				91B54FEE24F946F1004A50CC /* NetworkManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -196,6 +202,14 @@
 				91B54FE924F8663F004A50CC /* SearchModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		91B54FEB24F870D8004A50CC /* iTunesEndpoint */ = {
+			isa = PBXGroup;
+			children = (
+				91B54FEC24F87130004A50CC /* iTunesEndpoint.swift */,
+			);
+			path = iTunesEndpoint;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,7 +356,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -351,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91B54FED24F87130004A50CC /* iTunesEndpoint.swift in Sources */,
 				91B54FEA24F8663F004A50CC /* SearchModel.swift in Sources */,
 				91B54FE324F82A16004A50CC /* JSONParameterEncoder.swift in Sources */,
 				91B54FE524F82ACD004A50CC /* NetworkRouter.swift in Sources */,
@@ -362,6 +377,7 @@
 				91A4995124F4574600F7A03B /* EndpointType.swift in Sources */,
 				91A4991D24F3F07E00F7A03B /* AppDelegate.swift in Sources */,
 				91A4995424F4583300F7A03B /* HTTPMethod.swift in Sources */,
+				91B54FEF24F946F1004A50CC /* NetworkManager.swift in Sources */,
 				91A4991F24F3F07E00F7A03B /* SceneDelegate.swift in Sources */,
 				91B54FE124F81D2F004A50CC /* URLParameterEncoder.swift in Sources */,
 			);

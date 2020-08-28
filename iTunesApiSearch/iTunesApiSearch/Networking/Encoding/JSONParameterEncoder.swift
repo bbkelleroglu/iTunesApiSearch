@@ -8,7 +8,7 @@
 
 import Foundation
 public struct JSONParameterEncoder: ParameterEncoder {
-    public static func encode(urlRequest: inout URLRequest, with parameters: Parameters) throws {
+    public func encode(urlRequest: inout URLRequest, with parameters: Parameters) throws {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
             urlRequest.httpBody = jsonData
@@ -19,6 +19,4 @@ public struct JSONParameterEncoder: ParameterEncoder {
             throw NetworkError.encodingFailed
         }
     }
-    
-    
 }
