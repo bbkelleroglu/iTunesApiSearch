@@ -14,10 +14,10 @@ struct SearchResults: Decodable {
 
 // MARK: - Result
 struct SearchModel: Decodable {
-    let trackID: Int
+    let trackId: Int
     let artistName: String
     let collectionName: String
     let trackName: String
-    let collectionArtistName: String
+    let collectionArtistName: String?
     let artworkUrl100: String
 }

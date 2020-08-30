@@ -33,7 +33,7 @@ extension ITunesEndpoint: EndPointType {
     var task: HTTPTask {
         switch self {
         case .search(let term, let limit):
-            return .requestParameters(bodyParameters: .urlEncoding, urlParameters:["term": term,
+            return .requestParameters(bodyParameters: nil, bodyEncoding: .urlEncoding, urlParameters:["term": term,
                                                                                    "limit": limit])
         }
     }
