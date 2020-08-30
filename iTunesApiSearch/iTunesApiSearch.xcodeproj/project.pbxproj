@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9164F06724FADDC4002A881D /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9164F06624FADDC4002A881D /* NetworkLogger.swift */; };
+		9164F06924FB0FD3002A881D /* UICollectionViewFlowLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9164F06824FB0FD3002A881D /* UICollectionViewFlowLayout+Extension.swift */; };
 		91A4991D24F3F07E00F7A03B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A4991C24F3F07E00F7A03B /* AppDelegate.swift */; };
 		91A4991F24F3F07E00F7A03B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A4991E24F3F07E00F7A03B /* SceneDelegate.swift */; };
-		91A4992124F3F07E00F7A03B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A4992024F3F07E00F7A03B /* ViewController.swift */; };
+		91A4992124F3F07E00F7A03B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A4992024F3F07E00F7A03B /* MainViewController.swift */; };
 		91A4992424F3F07E00F7A03B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A4992224F3F07E00F7A03B /* Main.storyboard */; };
 		91A4992624F3F08000F7A03B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91A4992524F3F08000F7A03B /* Assets.xcassets */; };
 		91A4992924F3F08000F7A03B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A4992724F3F08000F7A03B /* LaunchScreen.storyboard */; };
@@ -19,6 +21,10 @@
 		91A4995424F4583300F7A03B /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A4995324F4583300F7A03B /* HTTPMethod.swift */; };
 		91A4995624F4599700F7A03B /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A4995524F4599700F7A03B /* HTTPTask.swift */; };
 		91A4995924F45BC400F7A03B /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A4995824F45BC400F7A03B /* ParameterEncoding.swift */; };
+		91B492E224FA8C2200BB054A /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B492E124FA8C2200BB054A /* MainCell.swift */; };
+		91B492E524FA8D9500BB054A /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B492E424FA8D9500BB054A /* UIImageView+Extensions.swift */; };
+		91B492E724FAA14900BB054A /* MainViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B492E624FAA14900BB054A /* MainViewDataSource.swift */; };
+		91B492E924FAA17500BB054A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B492E824FAA17500BB054A /* MainViewModel.swift */; };
 		91B54FDF24F81C1F004A50CC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B54FDE24F81C1F004A50CC /* NetworkError.swift */; };
 		91B54FE124F81D2F004A50CC /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B54FE024F81D2F004A50CC /* URLParameterEncoder.swift */; };
 		91B54FE324F82A16004A50CC /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B54FE224F82A16004A50CC /* JSONParameterEncoder.swift */; };
@@ -47,10 +53,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9164F06624FADDC4002A881D /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		9164F06824FB0FD3002A881D /* UICollectionViewFlowLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewFlowLayout+Extension.swift"; sourceTree = "<group>"; };
 		91A4991924F3F07E00F7A03B /* iTunesApiSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesApiSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A4991C24F3F07E00F7A03B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91A4991E24F3F07E00F7A03B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		91A4992024F3F07E00F7A03B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		91A4992024F3F07E00F7A03B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		91A4992324F3F07E00F7A03B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		91A4992524F3F08000F7A03B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91A4992824F3F08000F7A03B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,6 +73,10 @@
 		91A4995324F4583300F7A03B /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		91A4995524F4599700F7A03B /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
 		91A4995824F45BC400F7A03B /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		91B492E124FA8C2200BB054A /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		91B492E424FA8D9500BB054A /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		91B492E624FAA14900BB054A /* MainViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewDataSource.swift; sourceTree = "<group>"; };
+		91B492E824FAA17500BB054A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		91B54FDE24F81C1F004A50CC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		91B54FE024F81D2F004A50CC /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		91B54FE224F82A16004A50CC /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
@@ -123,11 +135,13 @@
 		91A4991B24F3F07E00F7A03B /* iTunesApiSearch */ = {
 			isa = PBXGroup;
 			children = (
+				91B492E324FA8D7800BB054A /* Extensions */,
+				91B492E024FA8C0200BB054A /* Main */,
+				91B492DF24FA8BFB00BB054A /* View */,
 				91B54FE824F86631004A50CC /* Model */,
 				91A4994F24F3FC1600F7A03B /* Networking */,
 				91A4991C24F3F07E00F7A03B /* AppDelegate.swift */,
 				91A4991E24F3F07E00F7A03B /* SceneDelegate.swift */,
-				91A4992024F3F07E00F7A03B /* ViewController.swift */,
 				91A4992224F3F07E00F7A03B /* Main.storyboard */,
 				91A4992524F3F08000F7A03B /* Assets.xcassets */,
 				91A4992724F3F08000F7A03B /* LaunchScreen.storyboard */,
@@ -174,6 +188,7 @@
 				91B54FE424F82ACD004A50CC /* NetworkRouter.swift */,
 				91B54FE624F82BE8004A50CC /* Router.swift */,
 				91B54FEE24F946F1004A50CC /* NetworkManager.swift */,
+				9164F06624FADDC4002A881D /* NetworkLogger.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -186,6 +201,33 @@
 				91B54FE224F82A16004A50CC /* JSONParameterEncoder.swift */,
 			);
 			path = Encoding;
+			sourceTree = "<group>";
+		};
+		91B492DF24FA8BFB00BB054A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		91B492E024FA8C0200BB054A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				91B492E124FA8C2200BB054A /* MainCell.swift */,
+				91A4992024F3F07E00F7A03B /* MainViewController.swift */,
+				91B492E624FAA14900BB054A /* MainViewDataSource.swift */,
+				91B492E824FAA17500BB054A /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		91B492E324FA8D7800BB054A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				91B492E424FA8D9500BB054A /* UIImageView+Extensions.swift */,
+				9164F06824FB0FD3002A881D /* UICollectionViewFlowLayout+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		91B54FDD24F81C05004A50CC /* ErrorHandling */ = {
@@ -365,20 +407,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9164F06724FADDC4002A881D /* NetworkLogger.swift in Sources */,
 				91B54FED24F87130004A50CC /* iTunesEndpoint.swift in Sources */,
 				91B54FEA24F8663F004A50CC /* SearchModel.swift in Sources */,
 				91B54FE324F82A16004A50CC /* JSONParameterEncoder.swift in Sources */,
 				91B54FE524F82ACD004A50CC /* NetworkRouter.swift in Sources */,
+				91B492E524FA8D9500BB054A /* UIImageView+Extensions.swift in Sources */,
 				91A4995924F45BC400F7A03B /* ParameterEncoding.swift in Sources */,
+				91B492E724FAA14900BB054A /* MainViewDataSource.swift in Sources */,
 				91B54FDF24F81C1F004A50CC /* NetworkError.swift in Sources */,
 				91B54FE724F82BE8004A50CC /* Router.swift in Sources */,
 				91A4995624F4599700F7A03B /* HTTPTask.swift in Sources */,
-				91A4992124F3F07E00F7A03B /* ViewController.swift in Sources */,
+				91A4992124F3F07E00F7A03B /* MainViewController.swift in Sources */,
 				91A4995124F4574600F7A03B /* EndpointType.swift in Sources */,
 				91A4991D24F3F07E00F7A03B /* AppDelegate.swift in Sources */,
+				91B492E924FAA17500BB054A /* MainViewModel.swift in Sources */,
 				91A4995424F4583300F7A03B /* HTTPMethod.swift in Sources */,
 				91B54FEF24F946F1004A50CC /* NetworkManager.swift in Sources */,
 				91A4991F24F3F07E00F7A03B /* SceneDelegate.swift in Sources */,
+				91B492E224FA8C2200BB054A /* MainCell.swift in Sources */,
+				9164F06924FB0FD3002A881D /* UICollectionViewFlowLayout+Extension.swift in Sources */,
 				91B54FE124F81D2F004A50CC /* URLParameterEncoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

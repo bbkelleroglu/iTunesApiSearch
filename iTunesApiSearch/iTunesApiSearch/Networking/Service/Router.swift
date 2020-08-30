@@ -17,6 +17,7 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         let session = URLSession.shared
         do {
             let request = try self.buildRequest(from: route)
+            NetworkLogger.log(request: request)
             task = session.dataTask(with: request, completionHandler: { data, response, error in
                 completion(data, response, error)
             })
@@ -39,8 +40,23 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
             switch route.task {
             case .request:
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            case .requestParameters(let bodyParameters, let urlParameters):
+
+            case .requestParameters(let bodyParameters,
+                                    let bodyEncoding,
+                                    let urlParameters):
                 try self.configureParameters(bodyParameters: bodyParameters,
+                                             bodyEncoding: bodyEncoding,
+                                             urlParameters: urlParameters,
+                                             request: &request)
+
+            case .requestParametersAndHeaders(let bodyParameters,
+                                              let bodyEncoding,
+                                              let urlParameters,
+                                              let additionalHeaders):
+
+                self.addAdditionalHeaders(additionalHeaders, request: &request)
+                try self.configureParameters(bodyParameters: bodyParameters,
+                                             bodyEncoding: bodyEncoding,
                                              urlParameters: urlParameters,
                                              request: &request)
             }
@@ -50,11 +66,12 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         }
     }
     // MARK: - Configure Parameters
-    fileprivate func configureParameters(bodyParameters: ParameterEncoding,
+    fileprivate func configureParameters(bodyParameters: Parameters?,
+                                         bodyEncoding: ParameterEncoding,
                                          urlParameters: Parameters?,
                                          request: inout URLRequest) throws {
         do {
-            try bodyParameters.encode(urlRequest: &request, urlParameters: urlParameters)
+            try bodyEncoding.encode(urlRequest: &request, bodyParameters: bodyParameters, urlParameters: urlParameters)
         } catch {
             throw error
         }
@@ -65,56 +82,6 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         guard let headers = additionalHeaders else { return }
         for (key, value) in headers {
             request.setValue(value, forHTTPHeaderField: key)
-        }
-    }
-}
-extension Router {
-    func httpRequest<T: Decodable>(_ target: EndPoint,
-                                   model: T.Type,
-                                   path: String? = nil,
-                                   completion: @escaping ClosureType<T>,
-                                   failure: @escaping Failure) {
-
-        return request(target, completion: { data, response, error in
-            DispatchQueue.main.async {
-                if let response = response as? HTTPURLResponse {
-                    let result = self.handleNetworkResponse(response)
-                    switch result {
-                    case .success:
-                        guard let responseData = data else {
-                            failure(NetworkError.noData.rawValue)
-                            return
-                        }
-                        do {
-                            let jsonData = try JSONSerialization.jsonObject(with: responseData,
-                                                                            options: .mutableContainers)
-                            print(jsonData)
-                            let apiResponse = try JSONDecoder().decode(model.self, from: responseData)
-                            completion(apiResponse)
-                        } catch {
-                            print(error.localizedDescription)
-                            failure(NetworkError.unableToDecode.rawValue)
-                        }
-                    case .failure(let networkFailureError):
-                        failure(networkFailureError)
-                    }
-                } else {
-                    failure(NetworkError.noData.rawValue)
-                }
-            }
-        })
-    }
-    private enum Result<String> {
-        case success
-        case failure(String)
-    }
-    private func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String> {
-        switch response.statusCode {
-        case 200...299: return .success
-        case 401...500: return .failure(NetworkError.authenticationError.rawValue)
-        case 501...599: return .failure(NetworkError.badRequest.rawValue)
-        case 600: return .failure(NetworkError.outdated.rawValue)
-        default: return .failure(NetworkError.failed.rawValue)
         }
     }
 }
