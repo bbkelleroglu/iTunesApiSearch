@@ -8,14 +8,11 @@
 
 import Foundation
 struct MainViewState {
-    fileprivate(set) var items: [SearchModel] = []
-    mutating func setItems(_ items: [SearchModel]) {
-        self.items = items
-    }
+    var items: [SearchModel] = []
 }
 class MainViewModel {
     // MARK: - Variables
-    private(set) var state = MainViewState()
+    private(set) var state: MainViewState
     // MARK: - CollectionView
     var numberOfItem: Int {
         return state.items.count
@@ -26,12 +23,15 @@ class MainViewModel {
         }
         return nil
     }
+    init(state: MainViewState = MainViewState()) {
+        self.state = state
+    }
     // MARK: - Service
     func fetchItems(text: String = "", limit: Int, completion: @escaping () -> Void) {
         NetworkManager.shared.search(text: text,
                                      limit: limit,
                                      completion: { result in
-                                        self.state.setItems(result!)
+                                        self.state.items = result!
                                         self.removeItemFromList()
                                         completion()
                                         // swiftlint:disable:next multiple_closures_with_trailing_closure
