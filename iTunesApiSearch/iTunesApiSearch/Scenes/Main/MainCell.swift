@@ -20,4 +20,8 @@ class MainCell: UICollectionViewCell {
             }
         }
     }
+
+    func setItemAsVisited() {
+        nameLabel?.textColor = UIColor(white: 0.4, alpha: 1)
+    }
 }

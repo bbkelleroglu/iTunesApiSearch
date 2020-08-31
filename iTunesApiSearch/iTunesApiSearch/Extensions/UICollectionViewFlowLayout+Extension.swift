@@ -13,7 +13,7 @@ public protocol CollectionViewFlowLayoutDelegate: class {
 }
 
 public class CollectionViewFlowLayout: UICollectionViewFlowLayout {
-    private var cache: [IndexPath : UICollectionViewLayoutAttributes] = [:]
+    private var cache: [IndexPath: UICollectionViewLayoutAttributes] = [:]
     private var contentHeight: CGFloat = 0
     private var contentWidth: CGFloat {
         guard let collectionView = collectionView else {

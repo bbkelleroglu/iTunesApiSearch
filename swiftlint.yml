@@ -56,6 +56,7 @@ opt_in_rules:
   - yoda_condition
 disabled_rules:
   - force_cast
+  - multiple_closures_with_trailing_closure
 identifier_name:
   excluded:
     - id
