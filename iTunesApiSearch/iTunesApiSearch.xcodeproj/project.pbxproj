@@ -15,7 +15,6 @@
 		9150D2B024FC285500B144F4 /* UserActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9150D2AF24FC285500B144F4 /* UserActivities.swift */; };
 		9150D2B424FC629400B144F4 /* UIViewController+AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9150D2B324FC629400B144F4 /* UIViewController+AlertExtension.swift */; };
 		9164F06724FADDC4002A881D /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9164F06624FADDC4002A881D /* NetworkLogger.swift */; };
-		9164F06924FB0FD3002A881D /* UICollectionViewFlowLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9164F06824FB0FD3002A881D /* UICollectionViewFlowLayout+Extension.swift */; };
 		9164F06C24FC1FB9002A881D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9164F06B24FC1FB9002A881D /* DetailViewController.swift */; };
 		91A4991D24F3F07E00F7A03B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A4991C24F3F07E00F7A03B /* AppDelegate.swift */; };
 		91A4991F24F3F07E00F7A03B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A4991E24F3F07E00F7A03B /* SceneDelegate.swift */; };
@@ -69,7 +68,6 @@
 		9150D2AF24FC285500B144F4 /* UserActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivities.swift; sourceTree = "<group>"; };
 		9150D2B324FC629400B144F4 /* UIViewController+AlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertExtension.swift"; sourceTree = "<group>"; };
 		9164F06624FADDC4002A881D /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
-		9164F06824FB0FD3002A881D /* UICollectionViewFlowLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewFlowLayout+Extension.swift"; sourceTree = "<group>"; };
 		9164F06B24FC1FB9002A881D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		91A4991924F3F07E00F7A03B /* iTunesApiSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesApiSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A4991C24F3F07E00F7A03B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -280,7 +278,6 @@
 			isa = PBXGroup;
 			children = (
 				91B492E424FA8D9500BB054A /* UIImageView+Extensions.swift */,
-				9164F06824FB0FD3002A881D /* UICollectionViewFlowLayout+Extension.swift */,
 				9150D2B324FC629400B144F4 /* UIViewController+AlertExtension.swift */,
 			);
 			path = Extensions;
@@ -489,7 +486,6 @@
 				9150D2AB24FC243300B144F4 /* NavigationController.swift in Sources */,
 				91A4991F24F3F07E00F7A03B /* SceneDelegate.swift in Sources */,
 				91B492E224FA8C2200BB054A /* MainCell.swift in Sources */,
-				9164F06924FB0FD3002A881D /* UICollectionViewFlowLayout+Extension.swift in Sources */,
 				91B54FE124F81D2F004A50CC /* URLParameterEncoder.swift in Sources */,
 				9150D2B024FC285500B144F4 /* UserActivities.swift in Sources */,
 			);
