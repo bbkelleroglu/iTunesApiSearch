@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchItems()
-        collectionFlowLayout()
+//        collectionFlowLayout()
         dataSource = MainViewDataSource(viewModel: viewModel)
         collectionView.dataSource = dataSource
     }
@@ -27,42 +27,29 @@ class MainViewController: UIViewController {
         collectionView.reloadData()
         viewModel.removeItemFromList()
     }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setCollectionViewCellSize()
+    }
     // MARK: - Fetching Items
     func fetchItems() {
         viewModel.fetchItems(text: "Solomun", limit: 10, completion: {
-            self.collectionView.reloadData()
+                self.setCollectionViewCellSize()
+                self.collectionView.reloadData()
         })
     }
-    // MARK: - UI Functions
-    func collectionFlowLayout() {
-        let flowLayout = CollectionViewFlowLayout()
-        flowLayout.flowDelegate = self
-        self.collectionView.collectionViewLayout = flowLayout
-    }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        guard let flowLayout = self.collectionView.collectionViewLayout as? CollectionViewFlowLayout else { return }
-        flowLayout.invalidateLayout()
-    }
 
-}
-// MARK: - CollectionViewFlowLayoutDelegate
-extension MainViewController: CollectionViewFlowLayoutDelegate {
-    func height(at indexPath: IndexPath) -> CGFloat {
-        guard let cell = self.collectionView.cellForItem(at: indexPath) else {
-            self.collectionView.reloadData()
-            return 150
-        }
-        cell.layoutIfNeeded()
-        //get calculated cell height
-        return cell.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
-    }
-
-    func numberOfColumns() -> Int {
-        return UIDevice.current.orientation == .portrait ? 1 : 2
+    func setCollectionViewCellSize() {
+        let columns = UIDevice.current.orientation.isLandscape ? 2 : 1
+        let size = CGSize(width: Int(collectionView.frame.width) / columns - 10, height: 150)
+        let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        layout?.itemSize = size
+        layout?.invalidateLayout()
+        print("itemSize: \(size)")
     }
 }
-extension MainViewController: UICollectionViewDelegateFlowLayout {
+extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if let mainCell = (cell as? MainCell), viewModel.isVisitedBefore(index: indexPath.row) {

@@ -35,8 +35,8 @@ class MainViewModel {
                                         self.removeItemFromList()
                                         completion()
                                         // swiftlint:disable:next multiple_closures_with_trailing_closure
-        }) { _ in
-            print(NetworkError.failed.rawValue)
+        }) { error in
+            print(error)
         }
     }
     // MARK: - User Activities
