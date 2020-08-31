@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         collectionView.reloadData()
+        viewModel.removeItemFromList()
     }
     // MARK: - Fetching Items
     func fetchItems() {
@@ -60,4 +61,20 @@ extension MainViewController: CollectionViewFlowLayoutDelegate {
     func numberOfColumns() -> Int {
         return UIDevice.current.orientation == .portrait ? 1 : 2
     }
+}
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if let mainCell = (cell as? MainCell), viewModel.isVisitedBefore(index: indexPath.row) {
+            mainCell.setItemAsVisited()
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let searchModel = viewModel.itemAtIndex(indexPath.row)
+        let model = DetailViewModel(with: searchModel!)
+        let detailVc = DetailViewController.instantiate(with: model)
+        self.navigationController?.pushViewController(detailVc, animated: true)
+    }
+
 }

@@ -20,4 +20,6 @@ struct SearchModel: Decodable {
     let trackName: String
     let collectionArtistName: String?
     let artworkUrl100: String
+    let trackCensoredName: String
+    let country: String
 }
